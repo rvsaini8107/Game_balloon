@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Play Game with Circle</title>
+    <style>
+      .left-col-1 {
+        background-color: red;
+      }
+      .left-col-2 {
+        background-color: green;
+      }
+      .left-col-3 {
+        background-color: blue;
+      }
+      .left-col-4 {
+        background-color: yellow;
+      }
+      .row {
+        align-items: center;
+        display: flex;
+        /* justify-content: space-between; */
+        height: 24%;
+        padding: 0 3%;
+        transition: all linear 3.5s;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .col.col-left {
+        padding: 5%;
+        border-radius: 50%;
+      }
+      .playGround {
+        border: 1px solid gray;
+        width: 65%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 2% 0;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 15px;
+      }
+      .active {
+        margin-left: 0% !important;
+        transition: all linear 3.5s;
+      }
+      .active2 {
+        background-color: gray;
+        transition: all linear;
+        transition-delay: 3.5s;
+      }
+      .col-right {
+        margin-left: 85%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="playGround">
+        <div class="row row-1">
+          <div class="col col-left left-col-1"></div>
+          <div class="col col-right rigth-col-1">←</div>
+        </div>
+        <div class="row row-2">
+          <div class="col col-left left-col-2"></div>
+          <div class="col col-right rigth-col-2">←</div>
+        </div>
+        <div class="row row-3">
+          <div class="col col-left left-col-3"></div>
+          <div class="col col-right rigth-col-3">←</div>
+        </div>
+        <div class="row row-4">
+          <div class="col col-left left-col-4"></div>
+          <div class="col col-right rigth-col-4">←</div>
+        </div>
+      </div>
+      <button class="rest">Rest</button>
+    </div>
+    <!-- script -->
+    <script>
+      console.log("Ram");
+      const cir1 = document.querySelector(".left-col-1");
+      const cir2 = document.querySelector(".left-col-2");
+      const cir3 = document.querySelector(".left-col-3");
+      const cir4 = document.querySelector(".left-col-4");
+      const arrow1 = document.querySelector(".rigth-col-1");
+      const arrow2 = document.querySelector(".rigth-col-2");
+      const arrow3 = document.querySelector(".rigth-col-3");
+      const arrow4 = document.querySelector(".rigth-col-4");
+      const rest = document.querySelector(".rest");
+
+      cir1.addEventListener("click", () => {
+        arrow1.classList.toggle("active");
+        cir1.classList.toggle("active2");
+      });
+      cir2.addEventListener("click", () => {
+        arrow2.classList.toggle("active");
+        cir2.classList.toggle("active2");
+      });
+      cir3.addEventListener("click", () => {
+        arrow3.classList.toggle("active");
+        cir3.classList.toggle("active2");
+      });
+      cir4.addEventListener("click", () => {
+        arrow4.classList.toggle("active");
+        cir4.classList.toggle("active2");
+      });
+      //   rest
+      rest.addEventListener("click", () => {
+        arrow1.classList.remove("active");
+        cir1.classList.remove("active2");
+
+        arrow2.classList.remove("active");
+        cir2.classList.remove("active2");
+
+        arrow3.classList.remove("active");
+        cir3.classList.remove("active2");
+
+        arrow4.classList.remove("active");
+        cir4.classList.remove("active2");
+      });
+    </script>
+  </body>
+</html>
